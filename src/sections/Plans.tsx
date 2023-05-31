@@ -1,11 +1,8 @@
 import { AnimateComponent } from "../components/AnimateComponent";
 import { plans } from "../constants/plans";
-import useLocales from "../hooks/useLocales";
 import "../styles/sections/plans.scss";
 
 export function Plans({ isMobile }: { isMobile?: boolean }) {
-  const { t } = useLocales();
-
   return (
     <div className="content">
       <AnimateComponent

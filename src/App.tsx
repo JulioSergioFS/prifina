@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollingProvider, Section } from "react-scroll-section";
 import { Header } from "./components/Header";
 import MotionLazyContainer from "./components/MotionLazyContainer";
-import { sections } from "./constants/header";
+import { sections } from "./constants/sections";
 import "./styles/global.scss";
 
 function App() {

@@ -2,12 +2,9 @@ import { Carousel } from "react-responsive-carousel";
 import { AnimateComponent } from "../components/AnimateComponent";
 import { TestimonialCard } from "../components/TestimonialCard";
 import { testimonials } from "../constants/testimonials";
-import useLocales from "../hooks/useLocales";
 import "../styles/sections/testimonials.scss";
 
 export function Testimonials({ isMobile }: { isMobile?: boolean }) {
-  const { t } = useLocales();
-
   return (
     <div className="content">
       <AnimateComponent

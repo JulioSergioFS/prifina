@@ -1,24 +1,7 @@
-import cssIcon from "@iconify/icons-skill-icons/css";
-import figmaDark from "@iconify/icons-skill-icons/figma-dark";
-import htmlIcon from "@iconify/icons-skill-icons/html";
-import javascriptIcon from "@iconify/icons-skill-icons/javascript";
-import reactDark from "@iconify/icons-skill-icons/react-dark";
-import typescriptIcon from "@iconify/icons-skill-icons/typescript";
 import { AnimateComponent } from "../components/AnimateComponent";
-import useLocales from "../hooks/useLocales";
 import "../styles/sections/eligible.scss";
 
 export function Eligible() {
-  const { t } = useLocales();
-  const logos = [
-    typescriptIcon,
-    javascriptIcon,
-    reactDark,
-    figmaDark,
-    cssIcon,
-    htmlIcon,
-  ];
-
   return (
     <div className="content eligible">
       <AnimateComponent
@@ -26,7 +9,7 @@ export function Eligible() {
           visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
         }}
       >
-        <h2 className="title">About Study Loans</h2>
+        <h2 className="title">Who is eligible for a loan?</h2>
       </AnimateComponent>
 
       <div className="eligible_content">

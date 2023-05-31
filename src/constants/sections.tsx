@@ -6,6 +6,25 @@ import { Home } from "../sections/Home";
 import { Plans } from "../sections/Plans";
 import { Testimonials } from "../sections/Testimonials";
 
+export const headerSections = [
+  {
+    id: "4",
+    name: "About",
+  },
+  {
+    id: "8",
+    name: "FAQ",
+  },
+  {
+    id: "7",
+    name: "Reviews",
+  },
+  {
+    url: "/work-opportunities",
+    name: "Work Opportunities",
+  },
+];
+
 export const sections = [
   { id: "1", name: "Home", component: <Home />, bgColor: "primary" },
 

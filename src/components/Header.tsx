@@ -1,6 +1,5 @@
 import { useScrollSections } from "react-scroll-section";
-import { sections } from "../constants/header";
-import useLocales from "../hooks/useLocales";
+import { headerSections } from "../constants/sections";
 import "../styles/header.scss";
 
 export function Header({
@@ -12,7 +11,6 @@ export function Header({
   isMobile: boolean;
   hidden: boolean;
 }) {
-  const { t } = useLocales();
   const scrollSection = useScrollSections();
 
   return (
@@ -28,9 +26,14 @@ export function Header({
       {!isMobile ? (
         <li className="menu">
           <ul>
-            {sections.map((item, index) => (
-              <li key={item.id} onClick={scrollSection[index]?.onClick}>
-                {t(item.name)}
+            {headerSections.map((item, index) => (
+              <li
+                key={item.id}
+                onClick={
+                  item.id ? scrollSection[Number(item.id)]?.onClick : () => {}
+                }
+              >
+                {item.name}
               </li>
             ))}
           </ul>

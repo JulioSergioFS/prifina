@@ -1,5 +1,4 @@
 import { AnimateComponent } from "../components/AnimateComponent";
-import useLocales from "../hooks/useLocales";
 import "../styles/sections/testimonials.scss";
 
 export function TestimonialCard({
@@ -15,8 +14,6 @@ export function TestimonialCard({
   };
   index: number;
 }) {
-  const { t } = useLocales();
-
   return (
     <AnimateComponent
       className="testimonials_item"
