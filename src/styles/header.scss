@@ -1,0 +1,109 @@
+@use "variables" as *;
+@import "media-queries";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+ul {
+  list-style: none;
+}
+
+.header {
+  color: #27282a;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  position: fixed;
+  height: 98px;
+  width: 100%;
+  z-index: 10;
+
+  &_logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 40px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+
+    @include mobile {
+      gap: 28px;
+    }
+
+    li {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.header-background {
+  background-color: #f8f8f9;
+  backdrop-filter: blur(20px);
+}
+
+.languages-container {
+  position: relative;
+  min-height: 28px;
+  min-width: 28px;
+
+  .dialog-button {
+    height: 28px;
+
+    @include mobile {
+      height: 32px;
+    }
+  }
+
+  .dialog-list {
+    position: absolute;
+    left: 0px !important;
+    background-color: $secondary-background-color;
+    color: $text-color;
+    border: 2px solid $divider-background-color;
+    inset-inline-start: -100%;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+
+    .item {
+      display: flex;
+      gap: 4px;
+      height: 40px;
+      width: 63px;
+      padding: 8px 0 8px 8px;
+
+      &:hover {
+        background-color: rgba($color: $primary-color, $alpha: 0.3);
+      }
+
+      p {
+        font-weight: normal;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .socials {
+    display: flex;
+  }
+}

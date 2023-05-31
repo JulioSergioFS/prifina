@@ -1,0 +1,57 @@
+@use "../_variables" as *;
+@import "../media-queries";
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+.eligible {
+  display: flex;
+  width: 1200px;
+
+  @include mobile {
+    flex-direction: column !important;
+  }
+
+  &_content {
+    display: flex;
+
+    @include mobile {
+      padding-top: 24px;
+      width: 100%;
+    }
+
+    &_list {
+      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      width: 50% !important;
+
+      @include mobile {
+        width: 100% !important;
+      }
+    }
+
+    &_image {
+      width: 50% !important;
+
+      @include mobile {
+        width: 100% !important;
+      }
+
+      .my-photo {
+        height: auto;
+
+        @include mobile {
+          height: 260px;
+        }
+      }
+    }
+  }
+}

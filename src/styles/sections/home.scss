@@ -1,0 +1,161 @@
+@use "../_variables" as *;
+@import "../media-queries";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.cdnfonts.com/css/canela-text-trial");
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+.home {
+  background-color: $dark-background-color;
+  display: flex;
+  flex-direction: row !important;
+  height: 720px;
+  width: 100% !important;
+
+  @include desktop-lg {
+    height: 540px;
+  }
+
+  @include tablet {
+    height: 600px;
+  }
+
+  @include mobile {
+    flex-direction: column !important;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1;
+
+    @include mobile {
+      padding: 24px 16px 0 16px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .text-content {
+      gap: 24px;
+      display: flex;
+      margin-top: -40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: $light-text-color;
+
+      &_title {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: -32px;
+        font-family: "Canela Deck Trial", sans-serif;
+
+        div {
+          font-size: 84px;
+        }
+
+        &_first {
+          display: flex;
+          gap: 24px;
+          align-items: center;
+
+          .gif {
+            background-image: url("images/graduate.gif");
+            background-size: cover;
+            background-position: 5%;
+            height: 42px;
+            width: 180px;
+            border-radius: 24px;
+          }
+        }
+      }
+
+      &_subtitle {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 20px;
+        max-width: 514px;
+      }
+
+      &_button {
+        width: max-content;
+      }
+    }
+
+    .logos {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50% !important;
+  position: absolute;
+  right: 0;
+  top: -90px;
+
+  @include desktop-lg {
+    top: -20px;
+  }
+
+  @include tablet {
+    top: 0;
+    position: relative;
+  }
+
+  @include mobile {
+    height: 600px;
+    position: absolute;
+    width: 100% !important;
+  }
+
+  .gradient {
+    height: 100%;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0) 40%,
+        $primary-color 100%
+      );
+
+      @include mobile {
+        background: rgba($color: $primary-color, $alpha: 0.7);
+      }
+    }
+  }
+
+  .first-photo {
+    height: 100%;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
