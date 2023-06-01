@@ -1,27 +1,5 @@
+import { studentPictures } from "../constants/studentPictures";
 import "../styles/sections/data.scss";
-
-const people = [
-  {
-    alt: "Person 1",
-    src: "images/students/1.png",
-  },
-  {
-    alt: "Person 2",
-    src: "images/students/2.png",
-  },
-  {
-    alt: "Person 3",
-    src: "images/students/3.png",
-  },
-  {
-    alt: "Person 4",
-    src: "images/students/4.png",
-  },
-  {
-    alt: "Person 5",
-    src: "images/students/5.png",
-  },
-];
 
 export function Data() {
   return (
@@ -34,7 +12,7 @@ export function Data() {
       <div className="divider" />
       <div className="data_students">
         <div>
-          {people.map((person) => (
+          {studentPictures.map((person) => (
             <img
               key={person.alt}
               className="person"
