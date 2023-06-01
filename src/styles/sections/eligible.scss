@@ -21,6 +21,7 @@
 
   &_content {
     display: flex;
+    gap: 72px;
 
     @include mobile {
       padding-top: 24px;
@@ -31,10 +32,27 @@
       gap: 24px;
       display: flex;
       flex-direction: column;
-      width: 50% !important;
+      width: auto !important;
 
       @include mobile {
         width: 100% !important;
+      }
+
+      &_item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+
+        &_dot {
+          height: 24px;
+          width: 24px;
+          background-color: #6d5fa4;
+          border-radius: 50%;
+        }
+
+        &_text {
+          width: 100%;
+        }
       }
     }
 

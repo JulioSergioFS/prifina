@@ -1,7 +1,7 @@
 import { AnimateComponent } from "../components/AnimateComponent";
 import "../styles/sections/about.scss";
 
-export function AboutMe() {
+export function About() {
   return (
     <div className="content about">
       <AnimateComponent
@@ -30,7 +30,7 @@ export function AboutMe() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
           }}
         >
-          <div className="text-content text-secondary">
+          <div className="text-content">
             <p>
               At our core, we are a team of passionate coders with a shared
               mission to empower individuals with the skills they need to

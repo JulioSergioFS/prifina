@@ -1,6 +1,14 @@
 import { AnimateComponent } from "../components/AnimateComponent";
 import "../styles/sections/eligible.scss";
 
+const conditions = [
+  "An 18 year old under graduate who has gained admission into a reputable institution.",
+  "A citizen student of Austrailia, United States, India and European Nations.",
+  "An international student who is looking to further his/her education abroad.",
+  "A resident student of Australia, United States, India and European Nations.",
+  "An undergraduate or graduate students within 2 years of graduating or about to begin a 1 or 2 years program.",
+];
+
 export function Eligible() {
   return (
     <div className="content eligible">
@@ -19,26 +27,12 @@ export function Eligible() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
           }}
         >
-          <p>
-            At our core, we are a team of passionate coders with a shared
-            mission to empower individuals with the skills they need to succeed
-            in today's digital world. Our team brings a wealth of industry
-            experience and technical expertise to the table, and we are
-            committed to providing the highest quality coding education to our
-            students.
-          </p>
-          <p>
-            We are committed to supporting our students every step of the way.
-            Our instructors are available to answer your questions, provide
-            feedback on your code, and guide you through the learning process.
-            We also provide a supportive community of like-minded learners,
-            where you can connect with other students, collaborate on projects,
-            and get inspired by others' work.
-          </p>
-          <p>
-            We are excited to have you join our coding course and look forward
-            to helping you achieve your coding goals!
-          </p>
+          {conditions.map((condition) => (
+            <div key={condition} className="eligible_content_list_item">
+              <div className="eligible_content_list_item_dot" />
+              <p className="eligible_content_list_item_text">{condition}</p>
+            </div>
+          ))}
         </AnimateComponent>
 
         <AnimateComponent

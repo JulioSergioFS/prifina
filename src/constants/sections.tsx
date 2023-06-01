@@ -1,4 +1,4 @@
-import { AboutMe } from "../sections/AboutMe";
+import { About } from "../sections/About";
 import { Contact } from "../sections/Contact";
 import { Data } from "../sections/Data";
 import { Eligible } from "../sections/Eligible";
@@ -26,43 +26,37 @@ export const headerSections = [
 ];
 
 export const sections = [
-  { id: "1", name: "Home", component: <Home />, bgColor: "primary" },
+  { id: "1", component: <Home />, bgColor: "primary" },
 
   {
     id: "2",
-    name: "About Us",
     component: <Data />,
     bgColor: "secondary",
   },
   {
-    id: "2",
-    name: "Eligible",
+    id: "3",
     component: <Eligible />,
     bgColor: "secondary",
   },
   {
-    id: "2",
-    name: "About Us",
-    component: <AboutMe />,
-    bgColor: "secondary",
+    id: "4",
+    component: <About />,
+    bgColor: "primary",
   },
   {
     id: "3",
-    name: "Plans",
     component: <Plans />,
     bgColor: "primary",
     haveIsMobile: true,
   },
   {
     id: "4",
-    name: "Testimonials",
     component: <Testimonials />,
     bgColor: "secondary",
     haveIsMobile: true,
   },
   {
     id: "5",
-    name: "Contact",
     component: <Contact />,
     bgColor: "primary",
     haveIsMobile: true,
