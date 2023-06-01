@@ -4,7 +4,7 @@ import { TestimonialCard } from "../components/TestimonialCard";
 import { testimonials } from "../constants/testimonials";
 import "../styles/sections/testimonials.scss";
 
-export function Testimonials({ isMobile }: { isMobile?: boolean }) {
+export function FAQ({ isMobile }: { isMobile?: boolean }) {
   return (
     <div className="content">
       <AnimateComponent

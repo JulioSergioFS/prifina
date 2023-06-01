@@ -2,9 +2,11 @@ import { About } from "../sections/About";
 import { Contact } from "../sections/Contact";
 import { Data } from "../sections/Data";
 import { Eligible } from "../sections/Eligible";
+import { FAQ } from "../sections/FAQ";
 import { Features } from "../sections/Features";
 import { Home } from "../sections/Home";
-import { Testimonials } from "../sections/Testimonials";
+import { Providers } from "../sections/Providers";
+import { Reviews } from "../sections/Reviews";
 
 export const headerSections = [
   {
@@ -44,19 +46,31 @@ export const sections = [
     bgColor: "primary",
   },
   {
-    id: "3",
+    id: "5",
     component: <Features />,
     bgColor: "secondary",
     haveIsMobile: true,
   },
   {
-    id: "4",
-    component: <Testimonials />,
+    id: "6",
+    component: <Providers />,
     bgColor: "secondary",
     haveIsMobile: true,
   },
   {
-    id: "5",
+    id: "7",
+    component: <Reviews />,
+    bgColor: "secondary",
+    haveIsMobile: true,
+  },
+  {
+    id: "8",
+    component: <FAQ />,
+    bgColor: "secondary",
+    haveIsMobile: true,
+  },
+  {
+    id: "9",
     component: <Contact />,
     bgColor: "primary",
     haveIsMobile: true,
