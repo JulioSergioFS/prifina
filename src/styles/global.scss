@@ -10,6 +10,7 @@
 
 body {
   color: $text-color;
+  font-family: "Noto Sans", sans-serif;
   height: 100vh;
 }
 
@@ -18,7 +19,6 @@ body,
 input,
 button,
 textarea {
-  font: 400 16px "Roboto", sans-serif;
   color: $text-color;
   text-decoration: none;
 }

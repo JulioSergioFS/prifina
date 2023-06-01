@@ -2,7 +2,7 @@ import { AnimateComponent } from "../components/AnimateComponent";
 import { plans } from "../constants/plans";
 import "../styles/sections/plans.scss";
 
-export function Plans({ isMobile }: { isMobile?: boolean }) {
+export function Features({ isMobile }: { isMobile?: boolean }) {
   return (
     <div className="content">
       <AnimateComponent

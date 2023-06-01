@@ -89,7 +89,6 @@ function App() {
                   zIndex: 2,
                 }}
               >
-                {index !== 0 ? <div className="divider" /> : null}
                 <section
                   className={`section background-${section.bgColor}`}
                   style={{

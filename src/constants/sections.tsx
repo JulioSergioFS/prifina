@@ -2,8 +2,8 @@ import { About } from "../sections/About";
 import { Contact } from "../sections/Contact";
 import { Data } from "../sections/Data";
 import { Eligible } from "../sections/Eligible";
+import { Features } from "../sections/Features";
 import { Home } from "../sections/Home";
-import { Plans } from "../sections/Plans";
 import { Testimonials } from "../sections/Testimonials";
 
 export const headerSections = [
@@ -45,8 +45,8 @@ export const sections = [
   },
   {
     id: "3",
-    component: <Plans />,
-    bgColor: "primary",
+    component: <Features />,
+    bgColor: "secondary",
     haveIsMobile: true,
   },
   {
