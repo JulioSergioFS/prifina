@@ -1,6 +1,6 @@
 import { AnimateComponent } from "../components/AnimateComponent";
-import { plans } from "../constants/plans";
-import "../styles/sections/plans.scss";
+import { features } from "../constants/features";
+import "../styles/sections/features.scss";
 
 export function Features({ isMobile }: { isMobile?: boolean }) {
   return (
@@ -10,17 +10,7 @@ export function Features({ isMobile }: { isMobile?: boolean }) {
           visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
         }}
       >
-        <h2 className="title">Plans</h2>
-      </AnimateComponent>
-
-      <AnimateComponent
-        variants={{
-          visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-        }}
-      >
-        <p className="subtitle">
-          We offer three different plans to meet your coding education needs.
-        </p>
+        <h2 className="title">Our Features</h2>
       </AnimateComponent>
 
       <AnimateComponent
@@ -28,20 +18,18 @@ export function Features({ isMobile }: { isMobile?: boolean }) {
           visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
         }}
       >
-        <div className="plans">
-          {plans.map((plans, index) => (
+        <div className="features">
+          {features.map((feature, index) => (
             <div className="card" key={index}>
-              <div className="company-text">
+              <div className="logo-container">
                 <img
                   className="logo"
-                  src={plans.image}
-                  alt={`${plans.title} logo`}
+                  src={feature.image}
+                  alt={`${feature.title} logo`}
                 />
-                <h6 className="name">{plans.title}</h6>
-                <h6 className="price">${plans.price}</h6>
-                <p className="carousel-description">{plans.text}</p>
               </div>
-              <p className="redirect-link">Join In</p>
+              <h6 className="name">{feature.title}</h6>
+              <p className="carousel-description">{feature.text}</p>
             </div>
           ))}
         </div>

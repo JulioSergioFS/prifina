@@ -1,0 +1,71 @@
+@use "../_variables" as *;
+@import "../media-queries";
+
+.features {
+  display: flex;
+  gap: 32px;
+  max-width: 1200px;
+  margin-top: 80px;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .card {
+    border: 1px solid #7b7b7e;
+    border-radius: 8px;
+    display: flex;
+    height: 280px;
+    width: 33%;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 32px;
+    align-items: center;
+    justify-content: center;
+    color: $secondary-text-color !important;
+    position: relative;
+
+    @include tablet {
+      height: 400px;
+    }
+
+    @include mobile {
+      height: auto;
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    .logo-container {
+      height: 78px !important;
+      width: 78px !important;
+      border-radius: 50%;
+      position: absolute;
+      top: -39px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $primary-color;
+
+      .logo {
+        height: 32px;
+        width: 32px;
+      }
+    }
+
+    .name {
+      font-family: "Canela Deck Trial", sans-serif;
+      font-size: 24px;
+    }
+
+    .carousel-description {
+      font-size: 16px;
+
+      @include mobile {
+        max-width: 400px;
+      }
+    }
+  }
+}
