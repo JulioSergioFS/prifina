@@ -66,8 +66,11 @@ export function Providers({ isMobile }: { isMobile?: boolean }) {
             <th>Learn More</th>
           </thead>
           <tbody>
-            {lenders.map((lender) => (
-              <tr key={lender.name}>
+            {lenders.map((lender, index) => (
+              <tr
+                key={lender.name}
+                className={index % 2 == 0 ? "table-secondary-background" : "'"}
+              >
                 <td>{lender.name}</td>
                 <td>{lender.countries}</td>
                 <td>{lender.interest}</td>

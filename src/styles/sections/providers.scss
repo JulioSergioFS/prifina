@@ -4,17 +4,48 @@
 .providers {
   table {
     width: 100%;
-    th {
-      height: 90px;
-      font-family: "Canela Deck Trial", sans-serif;
-      font-size: 24px;
+    thead {
+      padding: 80px 0;
+
+      th {
+        height: 90px;
+        font-family: "Canela Deck Trial", sans-serif;
+        font-size: 24px;
+        text-align: left;
+        padding: 0 40px;
+
+        &:first-child {
+          padding-left: 80px;
+        }
+
+        &:last-child {
+          padding-right: 80px;
+        }
+      }
     }
-    td {
-      height: 94px;
+    tr {
+      td {
+        height: 94px;
+        padding: 0 40px;
+
+        &:first-child {
+          padding-left: 80px;
+        }
+
+        &:last-child {
+          padding-right: 80px;
+        }
+
+        a {
+          border: 1px solid $primary-color;
+          border-radius: 8px;
+          padding: 16px 24px;
+        }
+      }
     }
   }
 }
 
 .table-secondary-background {
-  background-color: $primary-color;
+  background-color: #f5fffe;
 }
