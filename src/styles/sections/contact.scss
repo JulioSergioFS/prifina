@@ -1,87 +1,91 @@
 @use "../_variables" as *;
 @import "../media-queries";
-$input-border-color: rgb(213, 222, 229);
-
-input,
-textarea {
-  padding: 12px;
-  border-radius: 4px;
-  border: none;
-  background-color: $primary-background-color !important;
-
-  &:-webkit-autofill {
-    box-shadow: $primary-dark-color 0px 0px 0px 100px inset;
-    -webkit-text-fill-color: rgb(255, 255, 255);
-  }
-}
-
-button {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-
-  &:hover {
-    filter: brightness(0.95);
-  }
-}
 
 .contact {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 
-  .socials {
+  h5 {
+    font-size: 20px;
+  }
+
+  &_links {
     display: flex;
-    gap: 56px;
-    width: 100%;
-    justify-content: center;
 
-    @include tablet {
-      gap: 24px;
-    }
-
-    @include mobile {
-      gap: 16px;
-      flex-direction: column;
-      width: min-content !important;
-    }
-
-    div {
+    &_item {
+      width: 20%;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
+      flex-direction: column;
+      gap: 24px;
 
-      &:hover {
-        opacity: 0.7;
-      }
-
-      p {
-        font-size: 1.05rem;
+      &_link {
+        font-size: 16px;
+        color: #f7f8f9 !important;
       }
     }
   }
-}
 
-.subtitle {
-  text-align: center;
-}
+  .divider {
+    background-color: #8f9294;
+  }
 
-.highlight-text {
-  color: $primary-color;
-  font-weight: bold;
-  cursor: pointer;
-}
+  &_other {
+    display: flex;
 
-.button-primary {
-  background-color: $primary-color;
-  color: $button-text-color;
-  width: 100%;
-}
+    p {
+      font-size: 16px;
+    }
 
-.input {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
+    &_access {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      &_title {
+        padding-bottom: 24px;
+      }
+
+      &_email {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 16px 0 24px 0;
+
+        &_input {
+          height: 40px;
+          width: 232px;
+          border: 1px solid #8f9294;
+          color: $light-text-color;
+          padding: 0 8px;
+          border-radius: 4px;
+          background: none;
+        }
+      }
+
+      &_disclaimer {
+        padding: 24px 0 24px 0;
+      }
+
+      &_socials {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+      }
+    }
+
+    &_company {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: end;
+
+      &_content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  }
 }

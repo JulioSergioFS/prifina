@@ -19,8 +19,14 @@ body,
 input,
 button,
 textarea {
+  border: none;
   color: $text-color;
   text-decoration: none;
+}
+
+button {
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 label {
