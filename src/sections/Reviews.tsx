@@ -1,8 +1,6 @@
-import { Carousel } from "react-responsive-carousel";
 import { AnimateComponent } from "../components/AnimateComponent";
-import { TestimonialCard } from "../components/TestimonialCard";
-import { testimonials } from "../constants/testimonials";
-import "../styles/sections/testimonials.scss";
+import { Carousel } from "../components/Carousel";
+import "../styles/sections/reviews.scss";
 
 export function Reviews({ isMobile }: { isMobile?: boolean }) {
   return (
@@ -12,40 +10,13 @@ export function Reviews({ isMobile }: { isMobile?: boolean }) {
           visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
         }}
       >
-        <h2 className="title">Testimonials</h2>
+        <h2 className="title">Our Students share their Stories</h2>
       </AnimateComponent>
 
-      {isMobile ? (
-        <div className="testimonials">
-          {testimonials.map((person, index) => (
-            <TestimonialCard key={person.name} person={person} index={index} />
-          ))}
-        </div>
-      ) : (
-        <AnimateComponent
-          variants={{
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-        >
-          <Carousel
-            className="testimonials carousel"
-            autoPlay
-            infiniteLoop
-            showThumbs={false}
-            showStatus={false}
-            showArrows={false}
-            interval={4000}
-          >
-            {testimonials.map((person, index) => (
-              <TestimonialCard
-                key={person.name}
-                person={person}
-                index={index}
-              />
-            ))}
-          </Carousel>
-        </AnimateComponent>
-      )}
+      <div className="reviews">
+        <Carousel />
+        <p>See more videos</p>
+      </div>
     </div>
   );
 }

@@ -21,11 +21,11 @@ export function Providers({ isMobile }: { isMobile?: boolean }) {
       >
         <table>
           <thead>
-            <th>Lender</th>
-            <th>Country</th>
-            <th>Interest</th>
-            <th>Min.Credit</th>
-            <th>Learn More</th>
+            <td>Lender</td>
+            <td>Country</td>
+            <td>Interest</td>
+            <td>Min.Credit</td>
+            <td>Learn More</td>
           </thead>
           <tbody>
             {lenders.map((lender, index) => (

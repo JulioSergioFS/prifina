@@ -83,8 +83,8 @@ function App() {
           {sections.map((section, index) =>
             index > 1 ? (
               <Section
-                id={(index + 1).toString()}
-                key={index}
+                id={section.id}
+                key={section.id}
                 style={{
                   zIndex: 2,
                 }}
