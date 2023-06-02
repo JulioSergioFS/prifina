@@ -15,7 +15,14 @@ export function Reviews({ isMobile }: { isMobile?: boolean }) {
 
       <div className="reviews">
         <Carousel />
-        <p>See more videos</p>
+        <div className="reviews_redirect">
+          <div className="reviews_redirect_content">
+            <a target="_blank" href="https://google.com.br">
+              See more videos
+            </a>
+            <img src="logos/forward-arrow.svg" />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -46,9 +46,8 @@ export function SliderVideo({
         pauseCarousel();
       }}
       style={{
-        maxWidth: "85%",
-        maxHeight: "unset",
-        border: `3px solid #2d2eed`,
+        maxWidth: "99%",
+        maxHeight: "292px",
         borderRadius: "16px",
         overflow: "hidden",
       }}

@@ -1,7 +1,7 @@
 export const videos = [
   {
     url: "https://www.youtube.com/watch?v=N_62nGrecAU",
-    thumbnail: "eligible-section-girl.jpg",
+    thumbnail: "1.png",
   },
   {
     url: "https://www.youtube.com/watch?v=N_62nGrecAU",
@@ -9,6 +9,6 @@ export const videos = [
   },
   {
     url: "https://www.youtube.com/watch?v=N_62nGrecAU",
-    thumbnail: "eligible-section-girl.jpg",
+    thumbnail: "3.png",
   },
 ];

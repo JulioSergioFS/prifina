@@ -6,38 +6,6 @@ import { SliderVideo } from "./SliderVideo";
 
 // ----------------------------------------------------------------------
 
-function NextArrow({ className, style, clicked, downMD }: any) {
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        right: downMD ? "-8px" : undefined,
-        top: downMD ? "35%" : "40%",
-        zoom: 1.8,
-      }}
-      onClick={clicked}
-    />
-  );
-}
-
-function PrevArrow({ className, style, clicked, downMD }: any) {
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        left: downMD ? "-8px" : undefined,
-        top: downMD ? "35%" : "40%",
-        zoom: 1.8,
-      }}
-      onClick={clicked}
-    />
-  );
-}
-
 export function Carousel() {
   const carouselRef = useRef<Slider>(null);
   const [videosArePaused, setVideosArePaused] = useState(false);
@@ -46,32 +14,15 @@ export function Carousel() {
     speed: 800,
     dots: false,
     arrows: true,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
+    centerMode: true,
     autoplaySpeed: 3000,
-    nextArrow: (
-      <NextArrow
-        clicked={() => {
-          carouselRef?.current?.slickNext();
-          carouselRef?.current?.slickPlay();
-          setVideosArePaused(true);
-        }}
-      />
-    ),
-    prevArrow: (
-      <PrevArrow
-        clicked={() => {
-          carouselRef?.current?.slickPrev();
-          carouselRef?.current?.slickPlay();
-          setVideosArePaused(true);
-        }}
-      />
-    ),
   };
 
   return (
-    <div>
+    <div className="slider">
       <Slider ref={carouselRef} {...settings}>
         {videos.map((video) => (
           <div key={video.url}>
@@ -87,6 +38,19 @@ export function Carousel() {
           </div>
         ))}
       </Slider>
+
+      <img
+        className="slider-arrow-back"
+        src="logos/backward-arrow.svg"
+        height={24}
+        onClick={() => carouselRef?.current?.slickPrev()}
+      />
+      <img
+        className="slider-arrow-next"
+        src="logos/forward-arrow.svg"
+        height={24}
+        onClick={() => carouselRef?.current?.slickNext()}
+      />
     </div>
   );
 }
