@@ -27,7 +27,7 @@ export function SliderVideo({
       url={video.url}
       controls
       playing={playing && !videosArePaused}
-      light={`/images/reviews/${video.thumbnail}`}
+      light={`images/reviews/${video.thumbnail}`}
       onStart={() => setPlaying(true)}
       onPause={() => {
         setPlaying(false);

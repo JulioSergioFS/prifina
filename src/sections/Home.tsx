@@ -15,12 +15,9 @@ export function Home() {
         >
           <div className="text-content">
             <h2 className="text-content_title">
-              <div className="text-content_title_first">
-                <div>Helping</div>
-                <div className="gif" />
-                <div>students access</div>
+              <div>
+                Helping students access <br /> study loans easily
               </div>
-              <div>study loans easily</div>
             </h2>
             <p className="text-content_subtitle">
               Do you want to have access to loan platforms available in your
@@ -32,7 +29,7 @@ export function Home() {
                 className="button-primary"
                 onClick={() => goToPlans.onClick()}
               >
-                Check it now!
+                Check it now
               </button>
             </div>
           </div>

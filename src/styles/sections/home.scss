@@ -14,14 +14,18 @@
 }
 
 .home {
-  background-color: $dark-background-color;
+  background: url("/images/graduate.gif");
+  background-repeat: no-repeat;
+  background-size: 2000px;
   display: flex;
   flex-direction: row !important;
+  background-position: center;
   height: 720px;
   width: 100% !important;
 
   @include desktop-lg {
     height: 540px;
+    background-size: 1500px;
   }
 
   @include tablet {
@@ -37,6 +41,12 @@
     flex-direction: column;
     width: 100%;
     z-index: 1;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    height: 620px;
+
+    @include desktop-lg {
+      height: 100%;
+    }
 
     @include mobile {
       padding: 24px 16px 0 16px;
@@ -63,7 +73,7 @@
         font-family: "Canela Deck Trial", sans-serif;
 
         div {
-          font-size: 64px;
+          font-size: 96px;
         }
 
         &_first {
@@ -85,11 +95,16 @@
       &_subtitle {
         font-family: "Noto Sans", sans-serif;
         font-size: 20px;
-        max-width: 514px;
       }
 
       &_button {
         width: max-content;
+
+        button {
+          height: 72px;
+          width: 256px;
+          font-size: 20px;
+        }
       }
     }
 
