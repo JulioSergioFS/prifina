@@ -17,23 +17,28 @@
 
   &_text-images {
     display: flex;
-    gap: 40px;
+    gap: 16px;
 
     &_content {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       flex-direction: column;
-      text-align: center;
-      width: auto;
+      text-align: left;
+      max-width: 503px;
+      position: relative;
 
       .title {
-        padding: 0 !important;
+        text-align: left !important;
+        padding: 0 0 24px 0 !important;
+      }
+
+      &_img {
+        position: absolute;
+        top: 240px;
       }
     }
 
-    &_image {
-      width: min-content;
+    &_img {
+      width: 50%;
     }
   }
 }

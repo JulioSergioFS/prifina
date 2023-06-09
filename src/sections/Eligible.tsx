@@ -21,9 +21,15 @@ export function Eligible() {
           }}
         >
           {conditions.map((condition) => (
-            <div key={condition} className="eligible_content_list_item">
-              <div className="eligible_content_list_item_dot" />
-              <p className="eligible_content_list_item_text">{condition}</p>
+            <div key={condition.text} className="eligible_content_list_item">
+              <img
+                className="eligible_content_list_item_img"
+                src={condition.icon}
+                alt="icon"
+              />
+              <p className="eligible_content_list_item_text">
+                {condition.text}
+              </p>
             </div>
           ))}
         </AnimateComponent>

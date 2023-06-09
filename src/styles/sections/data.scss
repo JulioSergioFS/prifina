@@ -43,6 +43,11 @@
     height: 100%;
   }
 
+  &_logos {
+    display: flex;
+    gap: 16px;
+  }
+
   &_students {
     padding: 0 24px;
     display: flex;

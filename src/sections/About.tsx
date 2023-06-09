@@ -10,7 +10,6 @@ export function About() {
           visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
         }}
       >
-        <img src="images/about/1.png" alt="smiling woman" />
         <div className="about_text-images_content">
           <h2 className="title">About Study Loans</h2>
           <div>
@@ -21,9 +20,18 @@ export function About() {
             Providers. We also connect you with work and internship
             opportunities.
           </div>
-          <img src="images/about/2.png" className="about_text-images_image" />
+
+          <img
+            className="about_text-images_content_img"
+            src="images/about/lines.svg"
+            alt="abstract lines"
+          />
         </div>
-        <img src="images/about/3.png" />
+        <img
+          className="about_text-images_img"
+          src="images/about/graduating-people.png"
+          alt="graduating people"
+        />
       </AnimateComponent>
     </div>
   );
