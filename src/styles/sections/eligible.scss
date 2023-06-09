@@ -34,6 +34,12 @@
       flex-direction: column;
       width: auto !important;
 
+      :hover {
+        background-color: #00847a;
+        opacity: 0.8;
+        transition: color 0.3s ease;
+      }
+
       @include mobile {
         width: 100% !important;
       }
@@ -45,6 +51,11 @@
         border: 1px solid #7b7b7e;
         border-radius: 8px;
         padding: 20px;
+
+        :hover {
+          color: #f8f8f9;
+          transition: 0.3s ease;
+        }
 
         &_text {
           width: 100%;
