@@ -20,8 +20,10 @@ export function Header({
       }`}
     >
       <li className="header_logo">
-        <img src="prifina-logo.svg" alt="Prifina logo" height={50} />
-        Prifina
+        <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <img src="prifina-logo.svg" alt="Prifina logo" height={50} />
+          Prifina
+        </div>
       </li>
       {!isMobile ? (
         <li className="menu">
