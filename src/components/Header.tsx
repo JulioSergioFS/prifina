@@ -1,4 +1,4 @@
-import { useScrollSections } from "react-scroll-section";
+import { useScrollSection, useScrollSections } from "react-scroll-section";
 import { headerSections } from "../constants/sections";
 import "../styles/header.scss";
 
@@ -12,6 +12,7 @@ export function Header({
   hidden: boolean;
 }) {
   const scrollSection = useScrollSections();
+  const goToContact = useScrollSection("9");
 
   return (
     <ul
@@ -45,7 +46,7 @@ export function Header({
         </li>
       ) : null}
       <li>
-        <button>Contact Us</button>
+        <button onClick={goToContact.onClick}>Contact Us</button>
       </li>
     </ul>
   );
