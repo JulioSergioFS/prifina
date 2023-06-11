@@ -19,11 +19,12 @@ export function Header({
         !isMobile || hasBackground ? " header-background" : ""
       }`}
     >
-      <li className="header_logo">
-        <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <img src="prifina-logo.svg" alt="Prifina logo" height={50} />
-          Prifina
-        </div>
+      <li
+        className="header_logo"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <img src="prifina-logo.svg" alt="Prifina logo" height={50} />
+        Prifina
       </li>
       {!isMobile ? (
         <li className="menu">
@@ -32,7 +33,9 @@ export function Header({
               <li
                 key={item.id}
                 onClick={
-                  item.id ? scrollSection[Number(item.id)]?.onClick : () => {}
+                  item.id
+                    ? scrollSection[Number(item.id) - 1]?.onClick
+                    : () => {}
                 }
               >
                 {item.name}

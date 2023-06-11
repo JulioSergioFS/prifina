@@ -44,7 +44,7 @@ function App() {
 
   return (
     <MotionLazyContainer>
-      <ScrollingProvider scrollBehavior="smooth">
+      <ScrollingProvider scrollBehavior="smooth" offset={-92}>
         <div className="app">
           <Header
             hidden={hidden}
