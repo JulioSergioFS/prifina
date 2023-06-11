@@ -33,7 +33,7 @@ export function Contact({ isMobile }: { isMobile?: boolean }) {
             <label>Your Email *</label>
             <input className="contact_other_access_email_input" />
           </div>
-          <button>Submit</button>
+          <button className="contact_other_access_submit">Submit</button>
           <p className="contact_other_access_disclaimer">
             Prifina will use your email address to send you Prifina’s Newsletter
             and occasional updates. Prifina will not share it with any third
