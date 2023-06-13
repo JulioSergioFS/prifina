@@ -20,7 +20,7 @@ export function Reviews({ isMobile }: { isMobile?: boolean }) {
             <a target="_blank" href="https://google.com.br">
               See more videos
             </a>
-            <img src="logos/forward-arrow.svg" />
+            <img src="logos/forward-arrow.svg" alt="forward arrow" />
           </div>
         </div>
       </div>

@@ -30,7 +30,19 @@ export function QuestionAndAnswer({
           className="text faq_item_question_icon"
           onClick={() => setOpen(!open)}
         >
-          {open ? "-" : "+"}
+          {open ? (
+            <img
+              src="logos/down-arrow.svg"
+              className="arrow rotated"
+              alt="Down arrow"
+            />
+          ) : (
+            <img
+              src="logos/down-arrow.svg"
+              className="arrow"
+              alt="Right arrow"
+            />
+          )}
         </p>
       </div>
       {open ? (

@@ -36,6 +36,14 @@
         align-items: center;
         font-family: "Canela Deck Trial", sans-serif;
         font-size: 24px;
+
+        .arrow {
+          transition: all 0.4s ease;
+        }
+
+        .rotated {
+          transform: rotateZ(-180deg);
+        }
       }
     }
   }
