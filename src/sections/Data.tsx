@@ -29,7 +29,7 @@ export function Data() {
       <div className="divider" />
       <div className="data_connect">
         <img src="logos/star.svg" alt="star icon" />
-        <p>We connect you to the best loan plataforms</p>
+        <p>We connect you to the best loan platforms</p>
       </div>
     </div>
   );
