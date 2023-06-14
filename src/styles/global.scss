@@ -153,6 +153,12 @@ button {
   background-color: $secondary-background-color;
 }
 
+.tablet-background-change {
+  @include tablet {
+    background-color: $dark-background-color;
+  }
+}
+
 .divider {
   height: 1px;
   width: 100%;

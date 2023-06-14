@@ -4,7 +4,7 @@ import "../styles/sections/features.scss";
 
 export function Features({ isMobile }: { isMobile?: boolean }) {
   return (
-    <div className="content">
+    <div className="content section-color">
       <AnimateComponent
         variants={{
           visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },

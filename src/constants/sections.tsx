@@ -48,7 +48,7 @@ export const sections = [
   {
     id: "5",
     component: <Features />,
-    bgColor: "secondary",
+    bgColor: "secondary tablet-background-change",
     haveIsMobile: true,
   },
   {
