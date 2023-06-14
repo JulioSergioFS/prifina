@@ -17,7 +17,12 @@
 
   &_text-images {
     display: flex;
+    height: 600px !important;
     gap: 16px;
+
+    @include tablet {
+      height: 520px !important;
+    }
 
     &_content {
       display: flex;
@@ -35,11 +40,32 @@
         position: absolute;
         top: 240px;
         filter: grayscale(1);
+
+        height: 590px;
+        width: 521px;
+        background-image: url("/images/about/lines.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include tablet {
+          height: 292px;
+          width: 465px;
+          filter: none;
+          background-image: url("/images/about/woman-tablet.png");
+        }
       }
     }
 
     &_img {
+      background-image: url("/images/about/graduating-people.png");
+      background-repeat: no-repeat;
+      border-radius: 8px;
+      background-size: contain;
       width: 50%;
+
+      @include tablet {
+        background-image: url("/images/about/boy-tablet.png");
+      }
     }
   }
 }

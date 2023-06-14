@@ -21,17 +21,9 @@ export function About() {
             opportunities.
           </div>
 
-          <img
-            className="about_text-images_content_img"
-            src="images/about/lines.svg"
-            alt="abstract lines"
-          />
+          <div className="about_text-images_content_img" />
         </div>
-        <img
-          className="about_text-images_img"
-          src="images/about/graduating-people.png"
-          alt="graduating people"
-        />
+        <div className="about_text-images_img" />
       </AnimateComponent>
     </div>
   );
