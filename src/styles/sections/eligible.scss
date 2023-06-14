@@ -41,6 +41,10 @@
         transition: color 0.3s ease;
       }
 
+      @include tablet {
+        gap: 20px;
+      }
+
       @include mobile {
         width: 100% !important;
       }
@@ -53,9 +57,23 @@
         border-radius: 8px;
         padding: 20px;
 
+        @include tablet {
+          padding: 10px;
+        }
+
+        &_img {
+          @include tablet {
+            padding-top: 6px;
+          }
+        }
+
         &_text {
           width: 100%;
           font-size: 16px;
+
+          @include tablet {
+            font-size: 14px !important;
+          }
         }
       }
     }
@@ -63,12 +81,28 @@
     &_image {
       max-width: 52% !important;
 
+      @include tablet {
+        max-width: 40% !important;
+      }
+
       @include mobile {
         width: 100% !important;
       }
 
       .my-photo {
-        height: auto;
+        background-image: url("/images/eligible-section-girl.jpg");
+        background-repeat: no-repeat;
+        background-position: 90%;
+        border-radius: 8px;
+        background-size: cover;
+
+        height: 100%;
+        width: 100%;
+
+        @include tablet {
+          background-image: url("/images/eligible-section-girl-tablet.png");
+          background-size: auto;
+        }
 
         @include mobile {
           height: 260px;

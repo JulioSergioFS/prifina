@@ -85,6 +85,10 @@ button {
     padding: 64px 40px;
   }
 
+  @include tablet {
+    padding: 48px 32px;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -99,6 +103,10 @@ button {
       font-family: "Canela Deck Trial", sans-serif;
       font-size: 56px;
       text-align: center;
+
+      @include tablet {
+        font-size: 48px;
+      }
     }
 
     .title-variant {

@@ -74,6 +74,10 @@
 
         div {
           font-size: 96px;
+
+          @include tablet {
+            font-size: 60px;
+          }
         }
 
         &_first {

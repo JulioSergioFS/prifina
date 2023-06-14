@@ -40,11 +40,7 @@ export function Eligible() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
           }}
         >
-          <img
-            className="my-photo"
-            src="images/eligible-section-girl.jpg"
-            alt="Happy graduating girl"
-          />
+          <div className="my-photo" />
         </AnimateComponent>
       </div>
     </div>

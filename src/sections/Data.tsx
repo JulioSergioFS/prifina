@@ -11,7 +11,7 @@ export function Data() {
       </div>
       <div className="divider" />
       <div className="data_students">
-        <div>
+        <div className="pictures">
           {studentPictures.map((person) => (
             <img
               key={person.alt}
@@ -21,7 +21,7 @@ export function Data() {
             />
           ))}
         </div>
-        <div>
+        <div className="text">
           <h4>100+</h4>
           <p>Funded Students</p>
         </div>
