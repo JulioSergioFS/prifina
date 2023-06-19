@@ -6,7 +6,7 @@ import { SliderVideo } from "./SliderVideo";
 
 // ----------------------------------------------------------------------
 
-export function Carousel() {
+export function Carousel({ isMobile }: { isMobile?: boolean }) {
   const carouselRef = useRef<Slider>(null);
   const [videosArePaused, setVideosArePaused] = useState(false);
 
@@ -28,6 +28,7 @@ export function Carousel() {
           <div key={video.url}>
             <div style={{ width: "100%" }}>
               <SliderVideo
+                isMobile={isMobile}
                 video={video}
                 videosArePaused={videosArePaused}
                 setVideosArePaused={setVideosArePaused}

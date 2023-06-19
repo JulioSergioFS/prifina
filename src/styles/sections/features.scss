@@ -18,6 +18,7 @@
 
     @include tablet {
       width: 100%;
+      gap: 48px;
       flex-direction: column;
       align-items: center;
     }
@@ -51,6 +52,7 @@
 
       @include tablet {
         border: none;
+        padding: 0;
         width: 274px;
       }
 
@@ -71,6 +73,11 @@
         align-items: center;
 
         background-color: $primary-color;
+
+        @include tablet {
+          position: relative;
+          top: 0;
+        }
 
         .logo {
           height: 32px;

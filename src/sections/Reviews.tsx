@@ -14,7 +14,7 @@ export function Reviews({ isMobile }: { isMobile?: boolean }) {
       </AnimateComponent>
 
       <div className="reviews">
-        <Carousel />
+        <Carousel isMobile={isMobile} />
         <div className="reviews_redirect">
           <div className="reviews_redirect_content">
             <a target="_blank" href="https://google.com.br">

@@ -9,7 +9,7 @@ import "./styles/global.scss";
 function App() {
   const [hidden, setHidden] = useState(false);
   const [hasBackground, setHasBackground] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 820);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 834);
   const offsetHeightBackground = 450;
 
   const hideSection1 = () => {

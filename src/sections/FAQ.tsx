@@ -13,7 +13,7 @@ export function FAQ({ isMobile }: { isMobile?: boolean }) {
           visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
         }}
       >
-        <h2 className="title blue-text">
+        <h2 className="title blue-text faq-title">
           Got a Question? Get Answers Right Here!
         </h2>
       </AnimateComponent>

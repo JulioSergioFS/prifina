@@ -5,12 +5,14 @@ import ReactPlayer from "react-player";
 // ----------------------------------------------------------------------
 
 export function SliderVideo({
+  isMobile,
   video,
   videosArePaused,
   setVideosArePaused,
   pauseCarousel,
   playCarousel,
 }: {
+  isMobile?: boolean;
   video: {
     url: string;
     thumbnail: string;
@@ -47,7 +49,7 @@ export function SliderVideo({
       }}
       style={{
         maxWidth: "99%",
-        maxHeight: "292px",
+        maxHeight: isMobile ? "225px" : "292px",
         borderRadius: "16px",
         overflow: "hidden",
       }}
