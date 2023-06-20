@@ -5,6 +5,9 @@
   @include tablet {
     font-size: 36px !important;
   }
+  @include mobile {
+    font-size: 20px !important;
+  }
 }
 
 .faq {
@@ -20,15 +23,25 @@
     flex-direction: column;
     gap: 16px;
 
+    @include mobile {
+      font-size: 16px !important;
+      cursor: pointer;
+    }
+
     &_question {
       width: 100%;
       display: flex;
+      gap: 16px;
       justify-content: space-between;
       align-items: center;
       color: #545458;
 
       &_text {
         font-size: 20px;
+
+        @include mobile {
+          font-size: 16px !important;
+        }
       }
 
       &_icon {
@@ -43,13 +56,25 @@
         font-family: "Canela Deck Trial", sans-serif;
         font-size: 24px;
 
+        @include mobile {
+          height: 32px;
+          width: 32px;
+        }
+
         .arrow {
           transition: all 0.4s ease;
+          height: 8px;
         }
 
         .rotated {
           transform: rotateZ(-180deg);
         }
+      }
+    }
+
+    &_answer {
+      @include mobile {
+        font-size: 16px !important;
       }
     }
   }

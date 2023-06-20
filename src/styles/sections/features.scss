@@ -10,6 +10,14 @@
     }
   }
 
+  @include mobile {
+    h2,
+    h6,
+    p {
+      color: $text-color !important;
+    }
+  }
+
   .features {
     display: flex;
     gap: 32px;

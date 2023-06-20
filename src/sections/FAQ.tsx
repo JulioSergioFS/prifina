@@ -20,7 +20,12 @@ export function FAQ({ isMobile }: { isMobile?: boolean }) {
 
       <div className="faq">
         {faq.map((data, index) => (
-          <QuestionAndAnswer key={data.question} data={data} index={index} />
+          <QuestionAndAnswer
+            key={data.question}
+            data={data}
+            index={index}
+            isMobile={isMobile}
+          />
         ))}
       </div>
     </div>

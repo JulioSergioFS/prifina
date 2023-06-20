@@ -38,7 +38,9 @@
   }
 
   @include mobile {
+    padding: 0;
     flex-direction: column !important;
+    background-color: $dark-background-color;
   }
 
   .divider {
@@ -58,12 +60,40 @@
         width: 100px !important;
       }
     }
+
+    @include mobile {
+      gap: 32px;
+      width: 100%;
+      background-color: $secondary-background-color;
+      flex-direction: column !important;
+      align-items: center;
+
+      padding: 48px 0;
+
+      img {
+        width: 150px !important;
+      }
+    }
   }
 
   &_students {
     padding: 0 24px;
     display: flex;
     gap: 24px;
+
+    @include mobile {
+      padding: 63px 45px !important;
+    }
+
+    .title {
+      display: none;
+
+      @include mobile {
+        display: block;
+        padding: 0 !important;
+        color: $light-text-color;
+      }
+    }
 
     @include tablet {
       padding: 0 0 0 16px;
@@ -72,6 +102,10 @@
 
     .pictures {
       display: flex;
+
+      @include mobile {
+        display: none;
+      }
 
       .person {
         height: 40px;
@@ -87,6 +121,10 @@
 
     .text {
       min-width: 120px;
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 
@@ -96,6 +134,10 @@
 
     @include tablet {
       gap: 8px;
+    }
+
+    @include mobile {
+      display: none;
     }
 
     p {

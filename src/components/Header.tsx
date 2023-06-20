@@ -15,11 +15,7 @@ export function Header({
   const goToContact = useScrollSection("9");
 
   return (
-    <ul
-      className={`header${
-        !isMobile || hasBackground ? " header-background" : ""
-      }`}
-    >
+    <ul className="header header-background">
       <li
         className="header_logo"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

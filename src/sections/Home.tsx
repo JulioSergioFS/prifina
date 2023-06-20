@@ -29,7 +29,7 @@ export function Home() {
                 className="button-primary"
                 onClick={() => goToPlans.onClick()}
               >
-                Check it now
+                Check Now
               </button>
             </div>
           </div>

@@ -11,11 +11,13 @@ export const AnimateComponent = ({
   className,
   disabled,
   variants,
+  onClick,
 }: {
   children: any;
   className?: string;
   disabled?: boolean;
   variants?: Variants;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }) => {
   const control = useAnimation();
 
@@ -34,6 +36,7 @@ export const AnimateComponent = ({
             display: "flex",
             justifyContent: "center",
           }}
+          onClick={onClick ? onClick : () => {}}
         >
           {children}
         </m.div>

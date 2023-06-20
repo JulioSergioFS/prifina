@@ -23,11 +23,6 @@
     display: flex;
     gap: 48px;
 
-    @include mobile {
-      padding-top: 24px;
-      width: 100%;
-    }
-
     &_list {
       gap: 24px;
       display: flex;
@@ -61,9 +56,20 @@
           padding: 10px;
         }
 
+        @include tablet {
+          border: none;
+        }
+
         &_img {
           @include tablet {
             padding-top: 6px;
+          }
+          @include mobile {
+            border: 1px solid #7b7b7e;
+            border-radius: 50%;
+            height: 24px;
+            width: 24px;
+            padding: 4px;
           }
         }
 
@@ -87,6 +93,10 @@
 
       @include mobile {
         width: 100% !important;
+      }
+
+      @include mobile {
+        display: none !important;
       }
 
       .my-photo {

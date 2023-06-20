@@ -11,6 +11,9 @@ export function Data() {
       </div>
       <div className="divider" />
       <div className="data_students">
+        <h2 className="title">
+          More than 100 students have gotten funded through our loan partners.
+        </h2>
         <div className="pictures">
           {studentPictures.map((person) => (
             <img

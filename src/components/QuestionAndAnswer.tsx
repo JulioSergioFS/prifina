@@ -5,12 +5,14 @@ import { AnimateComponent } from "./AnimateComponent";
 export function QuestionAndAnswer({
   data,
   index,
+  isMobile,
 }: {
   data: {
     question: string;
     answer: string;
   };
   index: number;
+  isMobile?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -23,6 +25,7 @@ export function QuestionAndAnswer({
           transition: { duration: 0.8 * ((index + 1) / 4) },
         },
       }}
+      onClick={isMobile ? () => setOpen(!open) : () => {}}
     >
       <div className="faq_item_question">
         <p className="text faq_item_question_text">{data.question}</p>
