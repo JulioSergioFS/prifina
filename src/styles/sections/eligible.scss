@@ -32,8 +32,11 @@
       :hover {
         background-color: #00847a;
         color: #f8f8f9;
-        opacity: 0.8;
         transition: color 0.3s ease;
+
+        &_img {
+          mask: white;
+        }
       }
 
       @include tablet {
