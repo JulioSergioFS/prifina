@@ -34,8 +34,8 @@
         color: #f8f8f9;
         transition: color 0.3s ease;
 
-        &_img {
-          mask: white;
+        .eligible_content_list_item_img {
+          filter: invert(100%);
         }
       }
 
@@ -67,6 +67,7 @@
           @include tablet {
             padding-top: 6px;
           }
+
           @include mobile {
             border: 1px solid #7b7b7e;
             border-radius: 50%;
