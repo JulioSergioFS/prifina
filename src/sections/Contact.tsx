@@ -3,10 +3,11 @@ import { socials } from "../constants/socials";
 import "../styles/sections/contact.scss";
 
 export function Contact({ isMobile }: { isMobile?: boolean }) {
+  const linksMobile = [links[0], links[1], links[3], links[2], links[4]];
   return (
     <div className="content contact">
       <div className="contact_links">
-        {links.map((item) => (
+        {(isMobile ? linksMobile : links).map((item) => (
           <div key={item.topic} className="contact_links_item">
             <h5 className="contact_links_item_topic">{item.topic}</h5>
             {item.links.map((link) => (

@@ -133,7 +133,8 @@ button {
   @include tablet {
     height: 600px;
   }
-  @include tablet {
+
+  @include mobile {
     height: 360px;
   }
 }

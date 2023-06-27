@@ -26,14 +26,11 @@ export function Collapse({
           transition: { duration: 0.8 * ((index + 1) / 4) },
         },
       }}
-      onClick={isMobile ? () => setOpen(!open) : () => {}}
+      onClick={() => setOpen(!open)}
     >
       <div className="faq_item_question">
         <p className="text faq_item_question_text">{data.title}</p>
-        <p
-          className="text faq_item_question_icon"
-          onClick={() => setOpen(!open)}
-        >
+        <p className="text faq_item_question_icon">
           {open ? (
             <img
               src="logos/down-arrow.svg"

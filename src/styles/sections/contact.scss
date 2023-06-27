@@ -17,9 +17,9 @@
   &_links {
     display: flex;
 
-    @include tablet {
+    @include mobile {
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 36px;
     }
 
     &_item {
@@ -28,7 +28,7 @@
       flex-direction: column;
       gap: 24px;
 
-      @include tablet {
+      @include mobile {
         width: auto;
       }
 
@@ -36,7 +36,7 @@
         font-size: 16px;
         color: #f7f8f9 !important;
 
-        @include tablet {
+        @include mobile {
           font-size: 12px;
         }
       }
@@ -59,7 +59,7 @@
     i {
       font-size: 16px;
 
-      @include tablet {
+      @include mobile {
         font-size: 14px !important;
       }
     }
