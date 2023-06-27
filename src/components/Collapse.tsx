@@ -2,14 +2,15 @@ import { m } from "framer-motion";
 import { useState } from "react";
 import { AnimateComponent } from "./AnimateComponent";
 
-export function QuestionAndAnswer({
+export function Collapse({
   data,
   index,
   isMobile,
 }: {
   data: {
-    question: string;
-    answer: string;
+    title: string;
+    content: string;
+    link?: string;
   };
   index: number;
   isMobile?: boolean;
@@ -28,7 +29,7 @@ export function QuestionAndAnswer({
       onClick={isMobile ? () => setOpen(!open) : () => {}}
     >
       <div className="faq_item_question">
-        <p className="text faq_item_question_text">{data.question}</p>
+        <p className="text faq_item_question_text">{data.title}</p>
         <p
           className="text faq_item_question_icon"
           onClick={() => setOpen(!open)}
@@ -57,7 +58,13 @@ export function QuestionAndAnswer({
           exit={{ opacity: 0 }}
           className="faq_item_answer"
         >
-          {data.answer}
+          <div>{data.content}</div>
+
+          {data.link ? (
+            <a href={data.link} target="_blank">
+              View More
+            </a>
+          ) : null}
         </m.p>
       ) : null}
     </AnimateComponent>

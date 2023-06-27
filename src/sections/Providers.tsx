@@ -1,4 +1,5 @@
 import { AnimateComponent } from "../components/AnimateComponent";
+import { Collapse } from "../components/Collapse";
 import { lenders } from "../constants/lenders";
 import "../styles/sections/providers.scss";
 
@@ -19,33 +20,46 @@ export function Providers({ isMobile }: { isMobile?: boolean }) {
           visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
         }}
       >
-        <table>
-          <thead>
-            <td>Lender</td>
-            <td>Country</td>
-            <td>Interest</td>
-            <td>Min.Credit</td>
-            <td>Learn More</td>
-          </thead>
-          <tbody>
-            {lenders.map((lender, index) => (
-              <tr
-                key={lender.name}
-                className={index % 2 == 0 ? "table-secondary-background" : "'"}
-              >
-                <td>{lender.name}</td>
-                <td>{lender.countries}</td>
-                <td>{lender.interest}</td>
-                <td>None</td>
-                <td>
-                  <a href={lender.link} target="_blank">
-                    View More
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {isMobile ? (
+          lenders.map((data, index) => (
+            <Collapse
+              key={data.name}
+              data={{ title: data.name, content: data.text, link: data.link }}
+              index={index}
+              isMobile={isMobile}
+            />
+          ))
+        ) : (
+          <table>
+            <thead>
+              <td>Lender</td>
+              <td>Country</td>
+              <td>Interest</td>
+              <td>Min.Credit</td>
+              <td>Learn More</td>
+            </thead>
+            <tbody>
+              {lenders.map((lender, index) => (
+                <tr
+                  key={lender.name}
+                  className={
+                    index % 2 == 0 ? "table-secondary-background" : "'"
+                  }
+                >
+                  <td>{lender.name}</td>
+                  <td>{lender.countries}</td>
+                  <td>{lender.interest}</td>
+                  <td>None</td>
+                  <td>
+                    <a href={lender.link} target="_blank">
+                      View More
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </AnimateComponent>
     </div>
   );

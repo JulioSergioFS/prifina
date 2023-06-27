@@ -1,5 +1,5 @@
 import { AnimateComponent } from "../components/AnimateComponent";
-import { QuestionAndAnswer } from "../components/QuestionAndAnswer";
+import { Collapse } from "../components/Collapse";
 import { faq } from "../constants/faq";
 import "../styles/sections/faq.scss";
 
@@ -20,9 +20,9 @@ export function FAQ({ isMobile }: { isMobile?: boolean }) {
 
       <div className="faq">
         {faq.map((data, index) => (
-          <QuestionAndAnswer
+          <Collapse
             key={data.question}
-            data={data}
+            data={{ title: data.question, content: data.answer }}
             index={index}
             isMobile={isMobile}
           />

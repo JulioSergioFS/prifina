@@ -8,10 +8,19 @@
 
   h5 {
     font-size: 20px;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &_links {
     display: flex;
+
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
 
     &_item {
       width: 20%;
@@ -19,9 +28,17 @@
       flex-direction: column;
       gap: 24px;
 
+      @include tablet {
+        width: auto;
+      }
+
       &_link {
         font-size: 16px;
         color: #f7f8f9 !important;
+
+        @include tablet {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -32,6 +49,10 @@
 
   &_other {
     display: flex;
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     label,
     p,
@@ -47,6 +68,10 @@
       width: 50%;
       display: flex;
       flex-direction: column;
+
+      @include mobile {
+        width: 100%;
+      }
 
       &_title {
         padding-bottom: 24px;
@@ -93,6 +118,10 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: end;
+
+      @include mobile {
+        width: 100%;
+      }
 
       &_content {
         display: flex;

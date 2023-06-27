@@ -58,20 +58,32 @@
             padding-right: 20px;
           }
         }
-
-        a {
-          border: 1px solid $primary-color;
-          border-radius: 8px;
-          padding: 16px 24px;
-
-          &:hover {
-            background-color: #00847a;
-            color: #f8f8f9;
-            opacity: 0.8;
-            transition: color 0.3s ease;
-          }
-        }
       }
     }
+  }
+
+  a {
+    border: 1px solid $primary-color;
+    border-radius: 8px;
+    padding: 16px 24px;
+
+    @include mobile {
+      padding: 8px 16px;
+      width: max-content;
+      font-size: 16px;
+    }
+
+    &:hover {
+      background-color: #00847a;
+      color: #f8f8f9;
+      opacity: 0.8;
+      transition: color 0.3s ease;
+    }
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 }
