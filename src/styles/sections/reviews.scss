@@ -8,6 +8,14 @@
   gap: 64px;
   padding-top: 48px;
 
+  @include tablet {
+    gap: 24px;
+  }
+
+  @include mobile {
+    gap: 0px;
+  }
+
   .slick-slide {
     margin: 0 8px;
   }

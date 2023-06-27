@@ -2,7 +2,13 @@ import { AnimateComponent } from "../components/AnimateComponent";
 import { Carousel } from "../components/Carousel";
 import "../styles/sections/reviews.scss";
 
-export function Reviews({ isMobile }: { isMobile?: boolean }) {
+export function Reviews({
+  isMobile,
+  isXS,
+}: {
+  isMobile?: boolean;
+  isXS?: boolean;
+}) {
   return (
     <div className="content">
       <AnimateComponent
@@ -14,7 +20,7 @@ export function Reviews({ isMobile }: { isMobile?: boolean }) {
       </AnimateComponent>
 
       <div className="reviews">
-        <Carousel isMobile={isMobile} />
+        <Carousel isMobile={isMobile} isXS={isXS} />
         <div className="reviews_redirect">
           <div className="reviews_redirect_content">
             <a target="_blank" href="https://google.com.br">

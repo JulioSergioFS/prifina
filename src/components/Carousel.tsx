@@ -6,15 +6,21 @@ import { SliderVideo } from "./SliderVideo";
 
 // ----------------------------------------------------------------------
 
-export function Carousel({ isMobile }: { isMobile?: boolean }) {
+export function Carousel({
+  isMobile,
+  isXS,
+}: {
+  isMobile?: boolean;
+  isXS?: boolean;
+}) {
   const carouselRef = useRef<Slider>(null);
   const [videosArePaused, setVideosArePaused] = useState(false);
 
   const settings = {
     speed: 800,
     dots: false,
-    arrows: true,
-    slidesToShow: 2,
+    arrows: isMobile ? false : true,
+    slidesToShow: isMobile ? 1 : 2,
     slidesToScroll: 1,
     autoplay: true,
     centerMode: true,
@@ -29,6 +35,7 @@ export function Carousel({ isMobile }: { isMobile?: boolean }) {
             <div style={{ width: "100%" }}>
               <SliderVideo
                 isMobile={isMobile}
+                isXS={isXS}
                 video={video}
                 videosArePaused={videosArePaused}
                 setVideosArePaused={setVideosArePaused}
@@ -40,18 +47,22 @@ export function Carousel({ isMobile }: { isMobile?: boolean }) {
         ))}
       </Slider>
 
-      <img
-        className="slider-arrow-back"
-        src="logos/backward-arrow.svg"
-        height={24}
-        onClick={() => carouselRef?.current?.slickPrev()}
-      />
-      <img
-        className="slider-arrow-next"
-        src="logos/forward-arrow.svg"
-        height={24}
-        onClick={() => carouselRef?.current?.slickNext()}
-      />
+      {!isMobile ? (
+        <>
+          <img
+            className="slider-arrow-back"
+            src="logos/backward-arrow.svg"
+            height={24}
+            onClick={() => carouselRef?.current?.slickPrev()}
+          />
+          <img
+            className="slider-arrow-next"
+            src="logos/forward-arrow.svg"
+            height={24}
+            onClick={() => carouselRef?.current?.slickNext()}
+          />
+        </>
+      ) : null}
     </div>
   );
 }

@@ -2,7 +2,13 @@ import { useScrollSection } from "react-scroll-section";
 import { AnimateComponent } from "../components/AnimateComponent";
 import "../styles/sections/home.scss";
 
-export function Home() {
+export function Home({
+  isXS,
+  isMobile,
+}: {
+  isXS?: boolean;
+  isMobile?: boolean;
+}) {
   const goToPlans = useScrollSection("3");
 
   return (
@@ -16,7 +22,17 @@ export function Home() {
           <div className="text-content">
             <h2 className="text-content_title">
               <div>
-                Helping students access <br /> study loans easily
+                {isXS ? (
+                  <>
+                    Helping students
+                    <br />
+                    access Study loans
+                  </>
+                ) : (
+                  <>
+                    Helping students access <br /> study loans easily
+                  </>
+                )}
               </div>
             </h2>
             <p className="text-content_subtitle">
@@ -29,7 +45,7 @@ export function Home() {
                 className="button-primary"
                 onClick={() => goToPlans.onClick()}
               >
-                Check Now
+                {isMobile ? "Check Now" : "Check it now"}
               </button>
             </div>
           </div>

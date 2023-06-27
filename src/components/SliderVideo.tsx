@@ -6,6 +6,7 @@ import ReactPlayer from "react-player";
 
 export function SliderVideo({
   isMobile,
+  isXS,
   video,
   videosArePaused,
   setVideosArePaused,
@@ -13,6 +14,7 @@ export function SliderVideo({
   playCarousel,
 }: {
   isMobile?: boolean;
+  isXS?: boolean;
   video: {
     url: string;
     thumbnail: string;

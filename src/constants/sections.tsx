@@ -28,7 +28,7 @@ export const headerSections = [
 ];
 
 export const sections = [
-  { id: "1", component: <Home />, bgColor: "primary" },
+  { id: "1", component: <Home />, bgColor: "primary", haveIsXS: true },
 
   {
     id: "2",
@@ -60,7 +60,7 @@ export const sections = [
   {
     id: "7",
     component: <Reviews />,
-    bgColor: "secondary",
+    bgColor: "secondary mobile-background-change",
     haveIsMobile: true,
   },
   {

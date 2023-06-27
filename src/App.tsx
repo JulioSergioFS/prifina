@@ -10,10 +10,11 @@ function App() {
   const [hidden, setHidden] = useState(false);
   const [hasBackground, setHasBackground] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 834);
+  const [isXS, setIsXS] = useState(window.innerWidth <= 490);
   const offsetHeightBackground = 450;
 
   const hideSection1 = () => {
-    if (window.pageYOffset > offsetHeightBackground) {
+    if (window.scrollY > offsetHeightBackground) {
       setHidden(true);
     } else {
       setHidden(false);
@@ -21,7 +22,7 @@ function App() {
   };
 
   const changeHeaderBackgroundOnScroll = () => {
-    if (window.pageYOffset > offsetHeightBackground) {
+    if (window.scrollY > offsetHeightBackground) {
       setHasBackground(true);
     } else {
       setHasBackground(false);
@@ -39,7 +40,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    window.onresize = () => setIsMobile(window.innerWidth <= 820);
+    window.onresize = () => {
+      setIsMobile(window.innerWidth <= 820);
+      setIsXS(window.innerWidth <= 430);
+    };
   }, [window.innerWidth]);
 
   return (
@@ -62,7 +66,10 @@ function App() {
                   height: "100%",
                 }}
               >
-                {React.cloneElement(sections[0].component)}
+                {React.cloneElement(sections[0].component, {
+                  isXS,
+                  isMobile,
+                })}
               </m.div>
             </section>
           </Section>
@@ -99,6 +106,10 @@ function App() {
                   {section.haveIsMobile
                     ? React.cloneElement(section.component, {
                         isMobile,
+                      })
+                    : section.haveIsXS
+                    ? React.cloneElement(section.component, {
+                        isXS,
                       })
                     : section.component}
                 </section>

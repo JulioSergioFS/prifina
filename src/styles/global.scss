@@ -172,6 +172,12 @@ button {
   }
 }
 
+.mobile-background-change {
+  @include mobile {
+    background-color: #effaf9;
+  }
+}
+
 .divider {
   height: 1px;
   width: 100%;
