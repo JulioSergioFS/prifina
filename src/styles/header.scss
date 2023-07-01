@@ -34,13 +34,31 @@ ul {
   .menu {
     display: flex;
     align-items: center;
-  }
 
+    .mobile-menu { 
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #06226B;
+      color: #F8F8F9;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      padding: 16px;
+
+      li {
+        padding: 8px 0; 
+      }
+    }
+  }
+  
   ul {
     display: flex;
     gap: 40px;
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
+    justify-content: center;
 
     @include mobile {
       gap: 28px;
@@ -52,6 +70,23 @@ ul {
       &:hover {
         opacity: 0.8;
       }
+    }
+  }
+
+  .mobile-menu li:last-child button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    gap: 4px;
+    height: auto;
+    padding: 0;
+    width: 100%;
+    font-weight: normal;
+    &:hover {
+      opacity: 0.8;
     }
   }
 }
