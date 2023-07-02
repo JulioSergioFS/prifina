@@ -1,0 +1,64 @@
+@use "../../_variables" as *;
+@import "../../media-queries";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.cdnfonts.com/css/canela-text-trial");
+
+.jobs {
+  display: flex;
+  align-items: center;
+  height: max-content;
+  width: 100% !important;
+
+  &_search {
+    background-color: $primary-background-color;
+    color: $light-text-color;
+    padding: 44px 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 32px;
+
+    p {
+      font-size: 24px;
+    }
+
+    .input-list {
+      display: flex;
+      gap: 4px;
+      input {
+        height: 46px;
+      }
+    }
+  }
+
+  &_list {
+    background-color: $secondary-background-color;
+  }
+
+  &_text-content {
+    padding: 76px 100px;
+    display: flex;
+    background-color: $secondary-background-color;
+
+    &_list {
+      display: flex;
+      width: 100%;
+      gap: 40px;
+      max-width: 1300px;
+      justify-content: space-between !important;
+
+      &_item {
+        max-width: 525px;
+
+        h6 {
+          font-size: 40px !important;
+          text-align: left !important;
+          padding-bottom: 16px !important;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

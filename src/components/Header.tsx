@@ -1,5 +1,6 @@
 import Hamburger from "hamburger-react";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import { useScrollSection, useScrollSections } from "react-scroll-section";
 import { headerSections } from "../constants/sections";
 import "../styles/header.scss";
@@ -13,12 +14,28 @@ export function Header({
   isMobile: boolean;
   hidden: boolean;
 }) {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const scrollSection = useScrollSections();
   const goToContact = useScrollSection("9");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleItemClick = (id?: string | undefined) => {
+    if (id) {
+      if (pathname === "/work-opportunities") {
+        return () => navigate("/");
+      } else {
+        return scrollSection[Number(id) - 1]?.onClick;
+      }
+    }
+    //
+    else {
+      return () => navigate("/work-opportunities");
+    }
   };
 
   return (
@@ -36,14 +53,7 @@ export function Header({
           {isMenuOpen && (
             <ul className="mobile-menu">
               {headerSections.map((item, index) => (
-                <li
-                  key={item.id}
-                  onClick={
-                    item.id
-                      ? scrollSection[Number(item.id) - 1]?.onClick
-                      : () => {}
-                  }
-                >
+                <li key={index} onClick={handleItemClick(item.id)}>
                   {item.name}
                 </li>
               ))}
@@ -63,14 +73,7 @@ export function Header({
           <li className="menu">
             <ul className="non-mobile-menu">
               {headerSections.map((item, index) => (
-                <li
-                  key={item.id}
-                  onClick={
-                    item.id
-                      ? scrollSection[Number(item.id) - 1]?.onClick
-                      : () => {}
-                  }
-                >
+                <li key={item.id} onClick={handleItemClick(item.id)}>
                   {item.name}
                 </li>
               ))}

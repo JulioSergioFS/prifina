@@ -1,0 +1,153 @@
+@use "../../_variables" as *;
+@import "../../media-queries";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.cdnfonts.com/css/canela-text-trial");
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+.work-home {
+  background-color: $dark-background-color;
+  width: 100% !important;
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  @include desktop-lg {
+    height: 540px;
+    background-size: 1500px;
+  }
+
+  @include tablet {
+    height: 600px;
+  }
+
+  @include mobile {
+    height: 360px;
+    flex-direction: column !important;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1300px;
+
+    &_text {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      z-index: 1;
+
+      @include desktop-lg {
+        height: 100%;
+      }
+
+      @include mobile {
+        padding: 24px 16px 0 16px;
+        height: 100%;
+        width: 100%;
+      }
+
+      .text-content {
+        gap: 40px;
+        display: flex;
+        margin-top: -40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $light-text-color;
+
+        &_title {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: center;
+          margin-bottom: -32px;
+          font-family: "Canela Deck Trial", sans-serif;
+
+          font-size: 72px;
+
+          @include tablet {
+            font-size: 60px;
+          }
+          @include mobile {
+            font-size: 36px;
+          }
+
+          &_first {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+
+            .gif {
+              background-size: cover;
+              background-position: 5%;
+              height: 42px;
+              width: 180px;
+              border-radius: 24px;
+            }
+          }
+        }
+
+        &_subtitle {
+          font-family: "Noto Sans", sans-serif;
+          font-size: 20px;
+
+          @include mobile {
+            max-width: 300px;
+            font-size: 18px;
+          }
+        }
+
+        &_button {
+          width: max-content;
+
+          button {
+            height: 72px;
+            width: 256px;
+            font-size: 20px;
+
+            @include mobile {
+              height: 48px;
+              width: 174px;
+              font-size: 16px;
+            }
+          }
+
+          :hover {
+            opacity: 0.95;
+            transition: 0.3s ease;
+          }
+        }
+      }
+
+      .logos {
+        padding-top: 32px;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+
+    &_img {
+      height: min-content;
+      width: 478px !important;
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
