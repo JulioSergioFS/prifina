@@ -1,7 +1,7 @@
+import Hamburger from "hamburger-react";
+import { useState } from "react";
 import { useScrollSection, useScrollSections } from "react-scroll-section";
 import { headerSections } from "../constants/sections";
-import { useState } from "react";
-import Hamburger from "hamburger-react";
 import "../styles/header.scss";
 
 export function Header({
@@ -15,7 +15,7 @@ export function Header({
 }) {
   const scrollSection = useScrollSections();
   const goToContact = useScrollSection("9");
-  const [isMenuOpen, setIsMenuOpen] =useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -30,54 +30,57 @@ export function Header({
         <img src="prifina-logo.svg" alt="Prifina logo" height={50} />
         Prifina
       </li>
-      {isMobile && (
+      {isMobile ? (
         <li className="menu">
-          <Hamburger 
-          toggled={isMenuOpen} 
-          toggle={toggleMenu} 
-          /> 
+          <Hamburger toggled={isMenuOpen} toggle={toggleMenu} />
           {isMenuOpen && (
-          <ul className="mobile-menu">
-            {headerSections.map((item, index) => (
-              <li
-                key={item.id}
-                onClick={
-                  item.id
-                    ? scrollSection[Number(item.id) - 1]?.onClick
-                    : () => {}
-                }
-              >
-                {item.name}
-              </li>
-            ))}
-            <li>
-              <button 
-                className="mobile-menu-button" 
-                onClick={goToContact.onClick}>
+            <ul className="mobile-menu">
+              {headerSections.map((item, index) => (
+                <li
+                  key={item.id}
+                  onClick={
+                    item.id
+                      ? scrollSection[Number(item.id) - 1]?.onClick
+                      : () => {}
+                  }
+                >
+                  {item.name}
+                </li>
+              ))}
+              <li>
+                <button
+                  className="mobile-menu-button"
+                  onClick={goToContact.onClick}
+                >
                   Contact Us
-              </button>
-            </li>
-          </ul>
+                </button>
+              </li>
+            </ul>
           )}
         </li>
-      )}
-      {!isMobile && (
-        <li className="menu">
-          <ul className="non-mobile-menu">
-            {headerSections.map((item, index) => (
-              <li
-                key={item.id}
-                onClick={
-                  item.id
-                    ? scrollSection[Number(item.id) - 1]?.onClick
-                    : () => {}
-                }
-              >
-                {item.name}
-              </li>
-            ))}
-          </ul>
-        </li>
+      ) : (
+        <>
+          <li className="menu">
+            <ul className="non-mobile-menu">
+              {headerSections.map((item, index) => (
+                <li
+                  key={item.id}
+                  onClick={
+                    item.id
+                      ? scrollSection[Number(item.id) - 1]?.onClick
+                      : () => {}
+                  }
+                >
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          <li>
+            <button onClick={goToContact.onClick}>Contact Us</button>
+          </li>
+        </>
       )}
     </ul>
   );
