@@ -29,7 +29,7 @@ export function Home({
         </div>
         <img
           className="work-home_content_img"
-          src="/images/work-opp-banner.png"
+          src="images/work-opp-banner.png"
           alt="smiling people"
         />
       </div>
