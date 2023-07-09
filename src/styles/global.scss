@@ -58,7 +58,7 @@ button {
 
 .button-secondary {
   border: 1px solid $primary-color;
-  background-color: $light-text-color;
+  background: none;
   color: $text-color;
 
   &:hover {
