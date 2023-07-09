@@ -11,4 +11,8 @@ export const videos = [
     url: "https://www.youtube.com/watch?v=N_62nGrecAU",
     thumbnail: "3.png",
   },
+  {
+    url: "https://www.youtube.com/watch?v=N_62nGrecAU",
+    thumbnail: "4.png",
+  },
 ];

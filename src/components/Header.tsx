@@ -81,7 +81,9 @@ export function Header({
           </li>
 
           <li>
-            <button onClick={goToContact.onClick}>Contact Us</button>
+            <button className="button-secondary" onClick={goToContact.onClick}>
+              Contact Us
+            </button>
           </li>
         </>
       )}

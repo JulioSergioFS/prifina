@@ -57,11 +57,12 @@ button {
 }
 
 .button-secondary {
+  border: 1px solid $primary-color;
   background-color: $light-text-color;
-  color: $primary-color;
+  color: $text-color;
 
   &:hover {
-    background-color: #edcdff;
+    background-color: rgba($color: $primary-color, $alpha: 0.05);
   }
 }
 
