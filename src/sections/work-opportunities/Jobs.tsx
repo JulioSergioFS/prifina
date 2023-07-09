@@ -5,13 +5,35 @@ import { jobTypes } from "../../constants/jobTypes";
 import { jobs } from "../../constants/jobs";
 import "../../styles/sections/work-opportunities/jobs.scss";
 
+type InputType = {
+  location: string | undefined;
+  name: string | undefined;
+  type: string[] | undefined;
+};
+
 export function Jobs() {
+  const [inputs, setInputs] = useState<InputType>({
+    location: undefined,
+    name: undefined,
+    type: undefined,
+  });
   const [jobSelectedIndex, setJobSelectedIndex] = useState<number | undefined>(
     undefined
   );
 
   const selectedJob =
     jobSelectedIndex !== undefined ? jobs[jobSelectedIndex] : undefined;
+
+  const jobsFiltered = jobs.filter(
+    (job) =>
+      (!inputs.location ||
+        job.location.toLowerCase().includes(inputs.location.toLowerCase())) &&
+      (!inputs.name ||
+        job.name.toLowerCase().includes(inputs.name.toLowerCase())) &&
+      (!inputs.type ||
+        inputs.type.length === 0 ||
+        inputs.type.includes(job.type))
+  );
 
   return (
     <div className="content jobs">
@@ -30,11 +52,27 @@ export function Jobs() {
                   src="logos/input/location.svg"
                   alt="Ícone de localização"
                 />
-                <input placeholder="Location" />
+                <input
+                  placeholder="Location"
+                  onChange={(event) =>
+                    setInputs((prevData) => ({
+                      ...prevData,
+                      location: event.target.value,
+                    }))
+                  }
+                />
               </div>
               <div className="input-with-icon">
                 <img src="logos/input/search.svg" alt="Ícone de pesquisa" />
-                <input placeholder="Job Title" />
+                <input
+                  placeholder="Job Title"
+                  onChange={(event) =>
+                    setInputs((prevData) => ({
+                      ...prevData,
+                      name: event.target.value,
+                    }))
+                  }
+                />
               </div>
               <div className="input-with-icon">
                 <img src="logos/input/search.svg" alt="Ícone de pesquisa" />
@@ -44,6 +82,12 @@ export function Jobs() {
                   className="input-select"
                   classNamePrefix="input-select"
                   placeholder="Job Type"
+                  onChange={(event) =>
+                    setInputs((prevData) => ({
+                      ...prevData,
+                      type: event.map((item) => item.value),
+                    }))
+                  }
                 />
               </div>
             </div>
@@ -54,42 +98,50 @@ export function Jobs() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
             }}
           >
-            <div className="jobs_list_opportunities">
-              {jobs.map((job, index) => (
-                <div
-                  className="jobs_list_opportunities_job"
-                  onClick={() => setJobSelectedIndex(index)}
-                >
-                  <h4>{job.name}</h4>
-                  <div>
-                    <h6>{job.company}</h6>
-                    <p>
-                      {
-                        jobTypes[
-                          jobTypes.findIndex(
-                            (jobType) => jobType.value === job.type
-                          )
-                        ].label
-                      }
-                    </p>
-                  </div>
-                  <i>
-                    {job.currentlyHiring
-                      ? "Currently Hiring"
-                      : "No longer accepting Applicants"}
-                  </i>
-                  <div className="jobs_list_opportunities_job_location">
-                    <img
-                      src="logos/input/location.svg"
-                      alt="Ícone de localização"
-                    />
-                    <p>{job.location}</p>
-                  </div>
-                  <h3>${job.salary}/hour</h3>
+            {jobsFiltered.length === 0 ? (
+              <div className="jobs_list_not-found">
+                <p>No jobs found with these filters</p>
+              </div>
+            ) : (
+              <>
+                <div className="jobs_list_opportunities">
+                  {jobsFiltered.map((job, index) => (
+                    <div
+                      className="jobs_list_opportunities_job"
+                      onClick={() => setJobSelectedIndex(index)}
+                    >
+                      <h4>{job.name}</h4>
+                      <div>
+                        <h6>{job.company}</h6>
+                        <p>
+                          {
+                            jobTypes[
+                              jobTypes.findIndex(
+                                (jobType) => jobType.value === job.type
+                              )
+                            ].label
+                          }
+                        </p>
+                        <i>
+                          {job.currentlyHiring
+                            ? "Currently Hiring"
+                            : "No longer accepting Applicants"}
+                        </i>
+                      </div>
+                      <div className="jobs_list_opportunities_job_location">
+                        <img
+                          src="logos/input/location.svg"
+                          alt="Ícone de localização"
+                        />
+                        <p>{job.location}</p>
+                      </div>
+                      <h3>${job.salary}/hour</h3>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <button>See more</button>
+                <button>See more</button>
+              </>
+            )}
           </AnimateComponent>
           <AnimateComponent
             className="jobs_text-content"

@@ -89,6 +89,12 @@
     display: flex;
     flex-direction: column;
 
+    &_not-found {
+      text-align: center;
+      color: $tertiary-text-color;
+      padding-top: 76px;
+    }
+
     &_opportunities {
       width: 100%;
       display: flex;
@@ -112,6 +118,7 @@
 
         div {
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           gap: 16px;
         }
