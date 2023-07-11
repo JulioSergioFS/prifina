@@ -22,6 +22,6 @@ export const socials = [
   {
     name: "Email",
     image: "logos/socials/email.svg",
-    url: "image.png",
+    url: "mailto:hi@prifina.com",
   },
 ];
