@@ -27,27 +27,54 @@
         width: 100%;
       }
 
+      @include tablet {
+        padding: 44px 36px;
+        width: 100%;
+        justify-content: center !important;
+      }
+
       p {
         font-size: 24px;
+        white-space: nowrap;
+
+        @include tablet {
+          display: none;
+        }
       }
 
       .input-list {
         display: flex;
         gap: 4px;
 
+        @include mobile {
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          gap: 16px;
+        }
+
         .input-with-icon {
           display: flex;
           background-color: #fff;
-          width: 322px;
           border-radius: 2px;
           padding-left: 16px;
 
+          @include mobile {
+            max-width: 500px;
+            width: 100%;
+          }
+
           .input-select {
             width: 100%;
+            min-width: 250px;
             height: 46px;
 
             &__indicator-separator {
               width: 0;
+            }
+
+            &__clear-indicator {
+              display: none;
             }
 
             &__value-container {
@@ -87,6 +114,18 @@
             }
           }
         }
+
+        .input-fix-width {
+          width: 270px;
+
+          @include tablet {
+            width: 100%;
+          }
+
+          @include mobile {
+            max-width: 500px;
+          }
+        }
       }
     }
   }
@@ -106,10 +145,18 @@
         width: 100%;
       }
 
+      @include tablet {
+        padding: 44px 36px;
+      }
+
       &_not-found {
         text-align: center;
         color: $tertiary-text-color;
         padding-top: 76px;
+
+        @include tablet {
+          padding: 44px 0;
+        }
       }
 
       &_opportunities {
@@ -131,6 +178,17 @@
 
           &:hover {
             background-color: $tertiary-background-color;
+          }
+
+          @include tablet {
+            width: 50%;
+            margin-bottom: 40px;
+            padding: 16px 0;
+          }
+
+          @include mobile {
+            width: 100%;
+            margin-bottom: 16px;
           }
 
           div {
@@ -174,12 +232,24 @@
         width: 100%;
       }
 
+      @include tablet {
+        padding: 48px 36px 64px 36px;
+      }
+
+      @include mobile {
+        padding: 36px 36px 64px 36px;
+      }
+
       &_list {
         display: flex;
         width: 100%;
         gap: 40px;
         max-width: 1300px;
         justify-content: space-between !important;
+
+        @include mobile {
+          flex-direction: column;
+        }
 
         &_item {
           max-width: 525px;
@@ -212,13 +282,22 @@
       gap: 32px;
 
       @include desktop-lg {
-        padding: 40px 100px;
+        padding: 60px 100px;
+        width: 100%;
+      }
+
+      @include tablet {
+        padding: 40px 36px;
         width: 100%;
       }
 
       h3 {
         color: $primary-dark-color;
         max-width: 40%;
+
+        @include mobile {
+          max-width: 100%;
+        }
       }
 
       p {
@@ -236,6 +315,10 @@
       &_actions {
         display: flex;
         gap: 16px;
+
+        @include mobile {
+          flex-direction: column;
+        }
       }
 
       li {

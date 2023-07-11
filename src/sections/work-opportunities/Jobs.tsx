@@ -48,7 +48,7 @@ export function Jobs() {
             <div className="jobs_search_content">
               <p>Search by</p>
               <div className="input-list">
-                <div className="input-with-icon">
+                <div className="input-with-icon input-fix-width">
                   <img
                     src="logos/input/location.svg"
                     alt="Ícone de localização"
@@ -63,7 +63,7 @@ export function Jobs() {
                     }
                   />
                 </div>
-                <div className="input-with-icon">
+                <div className="input-with-icon input-fix-width">
                   <img src="logos/input/search.svg" alt="Ícone de pesquisa" />
                   <input
                     placeholder="Job Title"

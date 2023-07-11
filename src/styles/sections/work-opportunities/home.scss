@@ -28,6 +28,7 @@
 
   @include tablet {
     height: 600px;
+    padding: 0 36px;
   }
 
   @include mobile {
@@ -44,6 +45,18 @@
     width: 100%;
     max-width: 1300px;
 
+    @include desktop-lg {
+      gap: 24px;
+    }
+
+    @include tablet {
+      gap: 8px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+
     &_text {
       display: flex;
       flex-direction: column;
@@ -58,6 +71,7 @@
         padding: 24px 16px 0 16px;
         height: 100%;
         width: 100%;
+        max-width: 100%;
       }
 
       .text-content {
@@ -106,8 +120,7 @@
           font-size: 20px;
 
           @include mobile {
-            max-width: 300px;
-            font-size: 18px;
+            font-size: 16px;
           }
         }
 
@@ -144,6 +157,10 @@
     &_img {
       height: min-content;
       width: 478px !important;
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 }

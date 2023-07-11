@@ -4,9 +4,11 @@ import "../../styles/sections/work-opportunities/home.scss";
 export function Home({
   isXS,
   isMobile,
+  isTablet,
 }: {
   isXS?: boolean;
   isMobile?: boolean;
+  isTablet?: boolean;
 }) {
   return (
     <div className={`content work-home`}>
@@ -29,7 +31,7 @@ export function Home({
         </div>
         <img
           className="work-home_content_img"
-          src="images/work-opp-banner.png"
+          src={`images/work-opp-banner${isTablet ? "2" : ""}.png`}
           alt="smiling people"
         />
       </div>

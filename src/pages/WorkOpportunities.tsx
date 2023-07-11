@@ -9,6 +9,7 @@ import { Jobs } from "../sections/work-opportunities/Jobs";
 export function WorkOpportunities() {
   const [hidden, setHidden] = useState(false);
   const [hasBackground, setHasBackground] = useState(false);
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 1100);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 834);
   const [isXS, setIsXS] = useState(window.innerWidth <= 490);
   const offsetHeightBackground = 450;
@@ -41,6 +42,7 @@ export function WorkOpportunities() {
 
   useEffect(() => {
     window.onresize = () => {
+      setIsTablet(window.innerWidth <= 1100);
       setIsMobile(window.innerWidth <= 820);
       setIsXS(window.innerWidth <= 430);
     };
@@ -64,7 +66,7 @@ export function WorkOpportunities() {
               height: "100%",
             }}
           >
-            <Home />
+            <Home isTablet={isTablet} isMobile={isMobile} isXS={isXS} />
           </m.div>
         </section>
       </Section>
