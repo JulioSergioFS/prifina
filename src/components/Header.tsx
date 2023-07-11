@@ -17,7 +17,9 @@ export function Header({
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const scrollSection = useScrollSections();
-  const goToContact = useScrollSection("9");
+  const goToContact = useScrollSection(
+    pathname === "/work-opportunities" ? "3" : "9"
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -38,12 +40,17 @@ export function Header({
     }
   };
 
+  const handleLogoClick = () => {
+    if (pathname === "/work-opportunities") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <ul className="header header-background">
-      <li
-        className="header_logo"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      >
+      <li className="header_logo" onClick={handleLogoClick}>
         <img src="prifina-logo.svg" alt="Prifina logo" height={50} />
         Prifina
       </li>
