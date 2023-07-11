@@ -2,7 +2,7 @@ import { useState } from "react";
 import Select from "react-select";
 import { AnimateComponent } from "../../components/AnimateComponent";
 import { jobTypes } from "../../constants/jobTypes";
-import { jobs } from "../../constants/jobs";
+import { jobs as initialJobs } from "../../constants/jobs";
 import "../../styles/sections/work-opportunities/jobs.scss";
 
 type InputType = {
@@ -20,6 +20,7 @@ export function Jobs() {
   const [jobSelectedIndex, setJobSelectedIndex] = useState<number | undefined>(
     undefined
   );
+  const [jobs, setJobs] = useState(initialJobs);
 
   const selectedJob =
     jobSelectedIndex !== undefined ? jobs[jobSelectedIndex] : undefined;
@@ -142,7 +143,9 @@ export function Jobs() {
                       </div>
                     ))}
                   </div>
-                  <button>See more</button>
+                  <button onClick={() => setJobs([...jobs, ...initialJobs])}>
+                    See more
+                  </button>
                 </>
               )}
             </div>
